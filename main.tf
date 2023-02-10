@@ -283,14 +283,10 @@ resource "aws_lb_target_group_attachment" "kaka-target-group-attachment3" {
   port             = 80 
 }
 
-resource "aws_instance" "kaka-terraform" {
-  ami = "ami-01b8d743224353ffe"
-  instance_type = "t2.micro"
 
   provisioner "local-exec" {
     command = "ansible-playbook -i host-inventory ansible.yml"
   }
-}
 
 
 
